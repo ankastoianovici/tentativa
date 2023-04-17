@@ -2,27 +2,12 @@
 <menu xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <item
+        android:title="Server Details"
         android:id="@+id/ServerDetails"
         android:icon="@drawable/baseline_details_24"
-        android:title="Server Details"
         tools:ignore="HardcodedText" />
 
-    <item
-        android:id="@+id/Browse"
-        android:icon="@drawable/baseline_search_24"
-        android:title=" Details"
-         />
 
-    <item
-        android:id="@+id/DataAccess"
-        android:icon="@drawable/baseline_folder_24"
-        android:title="Data Access"
-        tools:ignore="HardcodedText" />
-    <item
-        android:id="@+id/AlarmsEvents"
-        android:icon="@drawable/baseline_alarm_24"
-        android:title="Alarms and Events"
-        tools:ignore="HardcodedText" />
     <item
         android:id="@+id/RuntimeDevelopment"
         android:icon="@drawable/baseline_developer_board_24"

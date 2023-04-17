@@ -1,8 +1,11 @@
 package com.example.licenta;
 
+import static java.security.AccessController.getContext;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -29,7 +32,7 @@ public class Citire extends AppCompatActivity {
                     case R.id.ServerDetails:
                         openRuntimeDevelopment();
                         break;
-                    case R.id.Browse:
+                   /* case R.id.Browse:
                         openRuntimeDevelopment();
                         break;
                     case R.id.DataAccess:
@@ -37,9 +40,10 @@ public class Citire extends AppCompatActivity {
                         break;
                     case R.id.AlarmsEvents:
                         openRuntimeDevelopment();
-                        break;
+                        break;*/
                     case R.id.RuntimeDevelopment:
                        // openRuntimeDevelopment();
+
                         replaceFragment(new Runtime());
                         break;
                 }
