@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f5f5fd"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/nume_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Titlu" />
+
+        <EditText
+            android:id="@+id/nume_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:background="@drawable/rectangle"
+            android:ems="10"/>
+
+        <TextView
+            android:id="@+id/nod_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Node" />
+
+        <EditText
+            android:id="@+id/nod_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:background="@drawable/rectangle"/>
+
+        <TextView
+            android:id="@+id/tip_nod_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tip nod" />
+
+        <Spinner
+            android:id="@+id/tip_nod_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/spinner_items"
+            android:minHeight="48dp" />
+
+        <FrameLayout
+            android:id="@+id/frame_digital"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="20dp"
+                        android:gravity="center">
+
+                        <Button
+                            android:id="@+id/button4"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:text="+"
+                            android:backgroundTint="#e85050"
+                            android:textSize="40sp"/>
+
+                        <Button
+                            android:id="@+id/button5"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_marginLeft="10dp"
+                            android:text="+"
+                            android:textColor="#e85050"
+                            android:textSize="40sp"
+                            android:backgroundTint="#f3f3fb"/>
+                        <Button
+                            android:id="@+id/button6"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_marginLeft="10dp"
+                            android:text="+" />
+                    </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="0dp">
+
+                        <TextView
+                            android:id="@+id/alarm1_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Alarma"
+                            />
+
+                        <CheckBox
+                            android:id="@+id/checkBox"
+                            android:layout_width="38dp"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:id="@+id/frame_alarma"
+            android:visibility="gone">
+        </FrameLayout>
+        <FrameLayout
+            android:id="@+id/frame_analog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:layout_width="211dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="20dp">
+
+                    <Button
+                        android:id="@+id/button7"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:text="+"
+                        android:backgroundTint="#e85050"
+                        android:textSize="40sp" />
+
+                    <Button
+                        android:id="@+id/button8"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginLeft="20dp"
+                        android:text="+"
+                        android:textColor="#e85050"
+                        android:textSize="40sp"
+                        android:backgroundTint="#f3f3fb"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="211dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+
+                    <TextView
+                        android:id="@+id/min_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Min Value" />
+
+                    <EditText
+                        android:id="@+id/min_value_edit"
+                        android:layout_width="95dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/rectangle"
+                        android:ems="10"
+
+                        android:inputType="textPersonName" />
+                    <TextView
+                        android:id="@+id/max_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Max Value" />
+
+                    <EditText
+                        android:id="@+id/max_value_edit"
+                        android:layout_width="95dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:background="@drawable/rectangle"/>
+
+
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="0dp">
+
+                    <TextView
+                        android:id="@+id/alarm_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Alarma" />
+
+                    <CheckBox
+                        android:id="@+id/checkBox1"
+                        android:layout_width="38dp"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+</FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:id="@+id/frame_alarma1"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#f5f5fd"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/high_alarm"
+                        android:layout_width="119dp"
+                        android:layout_height="wrap_content"
+                        android:text="high alarm" />
+
+                    <EditText
+                        android:id="@+id/high_alarm_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:minHeight="48dp"
+                        android:background="@drawable/rectangle" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/low_alarm_text"
+                        android:layout_width="119dp"
+                        android:layout_height="wrap_content"
+                        android:text="low alarm" />
+
+                    <EditText
+                        android:id="@+id/low_alarm_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:minHeight="48dp"
+                        android:background="@drawable/rectangle" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </FrameLayout>
+    </LinearLayout>
+</FrameLayout>
+

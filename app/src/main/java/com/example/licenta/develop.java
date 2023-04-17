@@ -1,31 +1,22 @@
 package com.example.licenta;
 
-import android.app.AlertDialog;
-import android.app.FragmentTransaction;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
-
-import java.net.Inet4Address;
 
 
-public class Runtime extends Fragment {
+public class develop extends Fragment {
 
     Button button;
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_runtime, container, false);
 
         button = rootView.findViewById(R.id.add);
@@ -38,7 +29,7 @@ public class Runtime extends Fragment {
                 /*PlayersFragment playersFragment=new PlayersFragment();
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container,playersFragment).commit();*/
 
-                PlayersFragment newFragment = new PlayersFragment();
+                PlayersNewFragment newFragment = new PlayersNewFragment();
                 newFragment.show(getChildFragmentManager(), "dff");
 
 
@@ -47,8 +38,4 @@ public class Runtime extends Fragment {
 
         return rootView;
     }
-
-
-
-
 }

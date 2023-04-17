@@ -1,21 +1,13 @@
 package com.example.licenta;
 
 import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.ClipData;
-import android.content.ClipboardManager;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.os.Bundle;
-import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.GridView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,8 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
-
-public class PlayersFragment extends DialogFragment{
+public class Players extends DialogFragment {
 
 
     GridView gv;
@@ -54,29 +45,8 @@ public class PlayersFragment extends DialogFragment{
         gv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                // Inflate the custom layout
-                View dialogView = LayoutInflater.from(getActivity()).inflate(R.layout.alertdialog, null);
 
-                // Build the dialog
-                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                builder.setView(dialogView);
-                builder.setTitle("Custom Dialog Title");
-
-                TextView textView = view.findViewById(R.id.nume1);
-                Button button=dialogView.findViewById(R.id.colect);
-
-                button.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        // Handle the button click event
-                        Toast.makeText(getActivity(), "Button clicked", Toast.LENGTH_SHORT).show();
-
-                    }
-                });
-
-                // Create and show the dialog
-                AlertDialog dialog = builder.create();
-                dialog.show();
+                Toast.makeText(getActivity(), names[position], Toast.LENGTH_SHORT).show();
             }
         });
 
