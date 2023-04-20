@@ -5,16 +5,29 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#f5f5fd"
-    tools:context=".Runtime"
-    android:id="@+id/container">
+    tools:context=".Runtime">
 
-    <Button
-        android:id="@+id/add"
-        android:layout_width="47dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|right"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="80dp"
-        android:backgroundTint="#e85050"
-        android:text="+" />
+
+    <FrameLayout
+        android:id="@+id/frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="60dp"
+        android:background="@color/white">
+
+
+        <Button
+            android:id="@+id/add"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="#e85050"
+            android:text="+" />
+    </FrameLayout>
+
 </FrameLayout>
