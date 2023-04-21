@@ -4,11 +4,10 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string-array name="spinner_items">
-        <item>Item 1</item>
-        <item>Item 2</item>
-        <item>Item 3</item>
-        <item>Item 4</item>
-        <item>Item 5</item>
+        <item>Analog/Digital</item>
+        <item>Analog</item>
+        <item>Digital</item>
+
     </string-array>
 
 </resources>

@@ -7,6 +7,11 @@
         android:icon="@drawable/baseline_details_24"
         tools:ignore="HardcodedText" />
 
+    <item
+        android:id="@+id/Runtime3"
+        android:icon="@drawable/baseline_developer_board_24"
+        android:title="Runtime "
+        tools:ignore="HardcodedText" />
 
     <item
         android:id="@+id/RuntimeDevelopment"
