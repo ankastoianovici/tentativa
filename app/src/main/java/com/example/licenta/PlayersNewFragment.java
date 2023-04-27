@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,6 +21,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
+
 
 public class PlayersNewFragment extends DialogFragment {
     private AlertDialog alertDialog;
@@ -30,7 +33,8 @@ public class PlayersNewFragment extends DialogFragment {
         private FrameLayout frame_alarma;
         private FrameLayout frame_alarma1;
         private CheckBox myCheckbox,myCheckbox1;
-        Button button;
+        //Button button;
+        ImageView button;
 
         @SuppressLint("MissingInflatedId")
         @Nullable
@@ -51,55 +55,45 @@ public class PlayersNewFragment extends DialogFragment {
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                     String selectedItem = parent.getItemAtPosition(position).toString();
-                    if (selectedItem.equals("Digital")) {
 
+                    if (selectedItem.equals("Digital")) {
                         frameDigital.setVisibility(View.VISIBLE);
                         frameAnalog.setVisibility(View.GONE);
-
+                        // Uncheck the checkbox when "Digital" is selected
+                        myCheckbox1.setChecked(false);
                         myCheckbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                             @Override
                             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                                 if (isChecked) {
                                     frame_alarma.setVisibility(View.VISIBLE);
-                                }
-                                else {
+                                } else {
                                     frame_alarma.setVisibility(View.GONE);
-
                                 }
-
                             }
                         });
-
-
                     } else if (selectedItem.equals("Analog")) {
-
                         frameDigital.setVisibility(View.GONE);
                         frameAnalog.setVisibility(View.VISIBLE);
+
+                        // Uncheck the checkbox when "Analog" is selected
+                        myCheckbox.setChecked(false);
 
                         myCheckbox1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                             @Override
                             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                                 if (isChecked) {
                                     frame_alarma1.setVisibility(View.VISIBLE);
-
-                                }
-                                else {
+                                } else {
                                     frame_alarma1.setVisibility(View.GONE);
                                 }
-
                             }
                         });
-
-
                     }
                 }
 
                 @Override
                 public void onNothingSelected(AdapterView<?> parent) {
                     // Do nothing
-                    View view = inflater.inflate(R.layout.new_alert_dialog, container, false);
-                    frame_alarma1.setVisibility(View.GONE);
-                    frame_alarma.setVisibility(View.GONE);
                 }
             });
 
@@ -110,8 +104,11 @@ public class PlayersNewFragment extends DialogFragment {
                     Toast.makeText(getActivity(), "Button clicked", Toast.LENGTH_SHORT).show();
                     Players newFragment = new Players();
                     newFragment.show(getChildFragmentManager(), "dff");
+
+
                 }
             });
+
             return view;
         }
 

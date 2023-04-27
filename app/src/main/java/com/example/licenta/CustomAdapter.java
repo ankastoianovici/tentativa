@@ -53,5 +53,6 @@ public class CustomAdapter extends BaseAdapter{
         nameTv.setText(names[position]);
         img.setImageResource(images[position]);
         return convertView;
+
     }
 }

@@ -33,13 +33,12 @@
             android:layout_height="wrap_content"
             android:text="Node" />
 
-        <EditText
-            android:id="@+id/nod_edit_text"
+        <Spinner
+            android:id="@+id/nod_id_Spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:background="@drawable/rectangle"/>
+            android:entries="@array/spinner_items2"
+            android:minHeight="48dp" />
 
         <TextView
             android:id="@+id/tip_nod_text"
@@ -70,21 +69,57 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:padding="20dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="1"
+                            android:layout_marginLeft="30dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:layout_marginLeft="15dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Alarma"
+                            android:layout_marginLeft="15dp"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:padding="20dp"
                         android:gravity="center">
 
-                        <Button
+                        <ImageView
                             android:id="@+id/button4"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
                             android:text="+"
                             android:backgroundTint="#e85050"
-                            android:textSize="40sp"/>
+                            android:textSize="40sp"
+
+                            />
 
                         <Button
                             android:id="@+id/button5"
@@ -102,7 +137,7 @@
                             android:layout_marginLeft="10dp"
                             android:text="+" />
                     </LinearLayout>
-
+                    </LinearLayout>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -125,7 +160,8 @@
                         <CheckBox
                             android:id="@+id/checkBox"
                             android:layout_width="38dp"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:checked="false"/>
                     </LinearLayout>
 
 
@@ -144,7 +180,7 @@
             android:id="@+id/frame_analog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="gone">
+           android:visibility="gone">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -158,31 +194,69 @@
                 android:padding="20dp">
 
                 <LinearLayout
-                    android:layout_width="211dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="20dp">
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="20dp">
 
-                    <Button
-                        android:id="@+id/button7"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        android:text="+"
-                        android:backgroundTint="#e85050"
-                        android:textSize="40sp" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal">
 
-                    <Button
-                        android:id="@+id/button8"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        android:layout_marginLeft="20dp"
-                        android:text="+"
-                        android:textColor="#e85050"
-                        android:textSize="40sp"
-                        android:backgroundTint="#f3f3fb"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Free Value"
+                               />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Alarm"
+                                android:layout_marginLeft="10dp"
+                                />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center">
+
+                            <Button
+                                android:id="@+id/button7"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:text="+"
+                                android:backgroundTint="#e85050"
+                                android:textSize="40sp" />
+
+                            <Button
+                                android:id="@+id/button8"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_marginLeft="20dp"
+                                android:text="+"
+                                android:textColor="#e85050"
+                                android:textSize="40sp"
+                                android:backgroundTint="#f3f3fb"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+
                 </LinearLayout>
+
                 <LinearLayout
-                    android:layout_width="211dp"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="20dp">
@@ -197,7 +271,7 @@
 
                     <EditText
                         android:id="@+id/min_value_edit"
-                        android:layout_width="95dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="@drawable/rectangle"
@@ -213,7 +287,7 @@
 
                     <EditText
                         android:id="@+id/max_value_edit"
-                        android:layout_width="95dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:ems="10"
