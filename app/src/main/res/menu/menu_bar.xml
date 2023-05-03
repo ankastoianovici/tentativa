@@ -16,6 +16,6 @@
     <item
         android:id="@+id/RuntimeDevelopment"
         android:icon="@drawable/baseline_developer_board_24"
-        android:title="Runtime and Development"
+        android:title="Deploy"
         tools:ignore="HardcodedText" />
 </menu>

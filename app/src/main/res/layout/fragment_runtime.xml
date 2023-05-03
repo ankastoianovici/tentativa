@@ -3,10 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#f5f5fd"
-    tools:context=".Runtime">
-
+    tools:context=".develop">
 
     <FrameLayout
         android:id="@+id/frame_layout"
@@ -23,9 +21,9 @@
             android:id="@+id/add"
             android:layout_width="48dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom|right"
+            android:layout_gravity="right"
             android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
             android:backgroundTint="#e85050"
             android:text="+" />
     </FrameLayout>

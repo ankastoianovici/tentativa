@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.FrameLayout;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -34,7 +35,26 @@ public class PlayersNewFragment extends DialogFragment {
         private FrameLayout frame_alarma1;
         private CheckBox myCheckbox,myCheckbox1;
         //Button button;
-        ImageView button;
+        ImageView button,button5;
+
+
+    String[] names={"Analizor clor", "Bazin empty","Bazin ful","Bazin half", "Boil 1","Boiler","Button1 off", "Button1 off p",
+            "Analizor clor", "Bazin empty","Bazin ful","Bazin half", "Boil 1","Boiler","Button1 off", "Button1 off p",
+            "Analizor clor", "Bazin empty","Bazin ful","Bazin half", "Boil 1","Boiler","Button1 off", "Button1 off p",
+            "Analizor clor", "Bazin empty","Bazin ful","Bazin half", "Boil 1","Boiler","Button1 off", "Button1 off p",
+            "Analizor clor", "Bazin empty","Bazin ful","Bazin half", "Boil 1","Boiler","Button1 off", "Button1 off p"};
+    int images[]={R.drawable.analizorclor,R.drawable.bazinempty,R.drawable.bazinful,
+            R.drawable.bazinhalf,R.drawable.boil1,R.drawable.boiler,R.drawable.button1_off,
+            R.drawable.button1_off_p,R.drawable.analizorclor,R.drawable.bazinempty,R.drawable.bazinful,
+            R.drawable.bazinhalf,R.drawable.boil1,R.drawable.boiler,R.drawable.button1_off,
+            R.drawable.button1_off_p,R.drawable.analizorclor,R.drawable.bazinempty,R.drawable.bazinful,
+            R.drawable.bazinhalf,R.drawable.boil1,R.drawable.boiler,R.drawable.button1_off,
+            R.drawable.button1_off_p,R.drawable.analizorclor,R.drawable.bazinempty,R.drawable.bazinful,
+            R.drawable.bazinhalf,R.drawable.boil1,R.drawable.boiler,R.drawable.button1_off,
+            R.drawable.button1_off_p,R.drawable.analizorclor,R.drawable.bazinempty,R.drawable.bazinful,
+            R.drawable.bazinhalf,R.drawable.boil1,R.drawable.boiler,R.drawable.button1_off,
+            R.drawable.button1_off_p};
+
 
         @SuppressLint("MissingInflatedId")
         @Nullable
@@ -50,6 +70,7 @@ public class PlayersNewFragment extends DialogFragment {
             myCheckbox = view.findViewById(R.id.checkBox);
             myCheckbox1 = view.findViewById(R.id.checkBox1);
             button=view.findViewById(R.id.button4);
+            button5=view.findViewById(R.id.button5);
 
             spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
@@ -98,7 +119,7 @@ public class PlayersNewFragment extends DialogFragment {
             });
 
 
-            button.setOnClickListener(new View.OnClickListener() {
+           /* button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Toast.makeText(getActivity(), "Button clicked", Toast.LENGTH_SHORT).show();
@@ -108,6 +129,53 @@ public class PlayersNewFragment extends DialogFragment {
 
                 }
             });
+*/
+
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                    View view = LayoutInflater.from(getContext()).inflate(R.layout.player, null);
+                    GridView gridView = view.findViewById(R.id.gridView1);
+                    CustomAdapter adapter=new CustomAdapter(getActivity(), names, images);
+                    gridView.setAdapter(adapter);
+                    builder.setView(view);
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
+                    gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            int selectedImage = images[position];
+                            //button.setBackgroundResource(selectedImage);
+                            button.setImageResource(selectedImage);
+                            dialog.dismiss();
+                        }
+                    });
+                }
+            });
+            button5.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                    View view = LayoutInflater.from(getContext()).inflate(R.layout.player, null);
+                    GridView gridView = view.findViewById(R.id.gridView1);
+                    CustomAdapter adapter=new CustomAdapter(getActivity(), names, images);
+                    gridView.setAdapter(adapter);
+                    builder.setView(view);
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
+                    gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            int selectedImage = images[position];
+
+                            button5.setImageResource(selectedImage);
+                            dialog.dismiss();
+                        }
+                    });
+                }
+            });
+
 
             return view;
         }

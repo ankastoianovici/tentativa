@@ -115,27 +115,23 @@
                             android:id="@+id/button4"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
-                            android:text="+"
-                            android:backgroundTint="#e85050"
-                            android:textSize="40sp"
-
+                            android:src="@drawable/photo_collage"
                             />
 
-                        <Button
+                        <ImageView
                             android:id="@+id/button5"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
+                            android:src="@drawable/photo_collage"
                             android:layout_marginLeft="10dp"
-                            android:text="+"
-                            android:textColor="#e85050"
-                            android:textSize="40sp"
-                            android:backgroundTint="#f3f3fb"/>
-                        <Button
+                            />
+
+                        <ImageView
                             android:id="@+id/button6"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
-                            android:layout_marginLeft="10dp"
-                            android:text="+" />
+                            android:src="@drawable/photo_collage"
+                            android:layout_marginLeft="10dp"/>
                     </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -232,23 +228,21 @@
                             android:orientation="horizontal"
                             android:gravity="center">
 
-                            <Button
+                            <ImageView
                                 android:id="@+id/button7"
                                 android:layout_width="70dp"
                                 android:layout_height="70dp"
-                                android:text="+"
-                                android:backgroundTint="#e85050"
-                                android:textSize="40sp" />
+                                android:src="@drawable/photo_collage"
 
-                            <Button
+                                />
+
+                            <ImageView
                                 android:id="@+id/button8"
                                 android:layout_width="70dp"
                                 android:layout_height="70dp"
-                                android:layout_marginLeft="20dp"
-                                android:text="+"
-                                android:textColor="#e85050"
-                                android:textSize="40sp"
-                                android:backgroundTint="#f3f3fb"/>
+                                android:src="@drawable/photo_collage"
+                                android:layout_marginLeft="10dp"
+                                />
                         </LinearLayout>
                     </LinearLayout>
 

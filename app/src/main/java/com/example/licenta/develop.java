@@ -17,7 +17,7 @@ public class develop extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_runtime, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_develop, container, false);
 
         button = rootView.findViewById(R.id.add);
         button.setOnClickListener(new View.OnClickListener() {
