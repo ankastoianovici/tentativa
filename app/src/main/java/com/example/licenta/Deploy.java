@@ -30,12 +30,19 @@ public class Deploy extends Fragment {
             public void onClick(View v) {
 
 //nu merge sa se deschida aici
-                Alarms fragment = new Alarms();
-                FragmentManager fragmentManager = getFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
 
+                /*Alarms newFragment = new Alarms();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container,newFragment).commit();*/
+                Alarms newFragment = new Alarms();
+
+                // Open the new fragment using a fragment transaction
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.container, newFragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
             }
+
         });
         return rootView;
     }
