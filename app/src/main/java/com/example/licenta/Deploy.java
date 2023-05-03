@@ -29,7 +29,7 @@ public class Deploy extends Fragment {
             @Override
             public void onClick(View v) {
 
-//nu merge sa se deschida aici
+            //nu merge sa se deschida aici
 
 
                 /*Alarms newFragment = new Alarms();
