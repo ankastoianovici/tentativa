@@ -35,7 +35,7 @@ public class PlayersNewFragment extends DialogFragment {
         private FrameLayout frame_alarma1;
         private CheckBox myCheckbox,myCheckbox1;
         //Button button;
-        ImageView button,button5;
+        ImageView button4,button5, button6,button7, button8;
 
 
     String[] names={"Analizor clor", "Bazin empty","Bazin ful","Bazin half", "Boil 1","Boiler","Button1 off", "Button1 off p",
@@ -69,8 +69,11 @@ public class PlayersNewFragment extends DialogFragment {
             frame_alarma1 = view.findViewById(R.id.frame_alarma1);
             myCheckbox = view.findViewById(R.id.checkBox);
             myCheckbox1 = view.findViewById(R.id.checkBox1);
-            button=view.findViewById(R.id.button4);
+            button4=view.findViewById(R.id.button4);
             button5=view.findViewById(R.id.button5);
+            button6=view.findViewById(R.id.button6);
+            button7=view.findViewById(R.id.button7);
+            button8=view.findViewById(R.id.button8);
 
             spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
@@ -118,20 +121,7 @@ public class PlayersNewFragment extends DialogFragment {
                 }
             });
 
-
-           /* button.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(getActivity(), "Button clicked", Toast.LENGTH_SHORT).show();
-                    Players newFragment = new Players();
-                    newFragment.show(getChildFragmentManager(), "dff");
-
-
-                }
-            });
-*/
-
-            button.setOnClickListener(new View.OnClickListener() {
+            button4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
@@ -147,7 +137,7 @@ public class PlayersNewFragment extends DialogFragment {
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                             int selectedImage = images[position];
                             //button.setBackgroundResource(selectedImage);
-                            button.setImageResource(selectedImage);
+                            button4.setImageResource(selectedImage);
                             dialog.dismiss();
                         }
                     });
@@ -176,6 +166,72 @@ public class PlayersNewFragment extends DialogFragment {
                 }
             });
 
+            button6.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                    View view = LayoutInflater.from(getContext()).inflate(R.layout.player, null);
+                    GridView gridView = view.findViewById(R.id.gridView1);
+                    CustomAdapter adapter=new CustomAdapter(getActivity(), names, images);
+                    gridView.setAdapter(adapter);
+                    builder.setView(view);
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
+                    gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            int selectedImage = images[position];
+
+                            button6.setImageResource(selectedImage);
+                            dialog.dismiss();
+                        }
+                    });
+                }
+            });
+            button7.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                    View view = LayoutInflater.from(getContext()).inflate(R.layout.player, null);
+                    GridView gridView = view.findViewById(R.id.gridView1);
+                    CustomAdapter adapter=new CustomAdapter(getActivity(), names, images);
+                    gridView.setAdapter(adapter);
+                    builder.setView(view);
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
+                    gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            int selectedImage = images[position];
+
+                            button7.setImageResource(selectedImage);
+                            dialog.dismiss();
+                        }
+                    });
+                }
+            });
+            button8.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                    View view = LayoutInflater.from(getContext()).inflate(R.layout.player, null);
+                    GridView gridView = view.findViewById(R.id.gridView1);
+                    CustomAdapter adapter=new CustomAdapter(getActivity(), names, images);
+                    gridView.setAdapter(adapter);
+                    builder.setView(view);
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
+                    gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            int selectedImage = images[position];
+
+                            button8.setImageResource(selectedImage);
+                            dialog.dismiss();
+                        }
+                    });
+                }
+            });
 
             return view;
         }

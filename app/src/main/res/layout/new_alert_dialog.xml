@@ -167,10 +167,115 @@
         </FrameLayout>
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="300dp"
             android:layout_gravity="center"
             android:id="@+id/frame_alarma"
             android:visibility="gone">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#f5f5fd"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/node1"
+                        android:layout_width="119dp"
+                        android:layout_height="wrap_content"
+                        android:text="node1" />
+
+                    <Spinner
+                        android:id="@+id/spinner4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/node2"
+                        android:layout_width="119dp"
+                        android:layout_height="wrap_content"
+                        android:text="node2" />
+
+                    <Spinner
+                        android:id="@+id/spinner5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/state1"
+                        android:layout_width="119dp"
+                        android:layout_height="wrap_content"
+                        android:text="State 1" />
+                    <EditText
+                        android:id="@+id/state1text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName"
+                        android:background="@drawable/rectangle"
+                        android:ems="10" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/state2"
+                        android:layout_width="119dp"
+                        android:layout_height="wrap_content"
+                        android:text="State 2" />
+                    <EditText
+                        android:id="@+id/state2text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName"
+                        android:background="@drawable/rectangle"
+                        android:ems="10" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/state3"
+                        android:layout_width="119dp"
+                        android:layout_height="wrap_content"
+                        android:text="State 3" />
+
+                    <EditText
+                        android:id="@+id/state3text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName"
+                        android:background="@drawable/rectangle"
+                        android:ems="10" />
+
+
+                </LinearLayout>
+            </LinearLayout>
         </FrameLayout>
         <FrameLayout
             android:id="@+id/frame_analog"
@@ -338,6 +443,27 @@
                     android:padding="10dp">
 
                     <TextView
+                        android:id="@+id/node1analog"
+                        android:layout_width="119dp"
+                        android:layout_height="wrap_content"
+                        android:text="Node1" />
+
+                    <Spinner
+                        android:id="@+id/spinner10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#f5f5fd"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
                         android:id="@+id/high_alarm"
                         android:layout_width="119dp"
                         android:layout_height="wrap_content"
@@ -347,10 +473,9 @@
                         android:id="@+id/high_alarm_edit_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:ems="10"
                         android:inputType="textPersonName"
-                        android:minHeight="48dp"
-                        android:background="@drawable/rectangle" />
+                        android:background="@drawable/rectangle"
+                        android:ems="10" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -368,10 +493,9 @@
                         android:id="@+id/low_alarm_edit_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:ems="10"
                         android:inputType="textPersonName"
-                        android:minHeight="48dp"
-                        android:background="@drawable/rectangle" />
+                        android:background="@drawable/rectangle"
+                        android:ems="10" />
                 </LinearLayout>
             </LinearLayout>
 
