@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 
 public class Deploy extends Fragment {
@@ -32,15 +33,15 @@ public class Deploy extends Fragment {
             //nu merge sa se deschida aici
 
 
-                /*Alarms newFragment = new Alarms();
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container,newFragment).commit();*/
-                Alarms newFragment = new Alarms();
 
-                // Open the new fragment using a fragment transaction
-                FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.replace(R.id.container, newFragment);
-                transaction.addToBackStack(null);
-                transaction.commit();
+
+
+              /*  Toast.makeText(getActivity(), "First Fragment", Toast.LENGTH_LONG).show();
+                FragmentManager fragmentManager = getParentFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+               // fragmentTransaction.replace(R.id., new Alarms());
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();*/
             }
 
         });

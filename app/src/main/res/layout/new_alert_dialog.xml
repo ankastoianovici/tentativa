@@ -425,7 +425,7 @@
 </FrameLayout>
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="250dp"
             android:layout_gravity="center"
             android:id="@+id/frame_alarma1"
             android:visibility="gone">
@@ -496,6 +496,21 @@
                         android:inputType="textPersonName"
                         android:background="@drawable/rectangle"
                         android:ems="10" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+
+                    <Button
+                        android:id="@+id/save_analog"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:backgroundTint="#e85050"
+                        android:text="Save" />
                 </LinearLayout>
             </LinearLayout>
 

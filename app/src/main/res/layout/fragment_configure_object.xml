@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f5f5fd"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/name_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Name" />
+
+        <EditText
+            android:id="@+id/name_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:background="@drawable/rectangle"
+            android:ems="10"/>
+        <TextView
+            android:id="@+id/node_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Node type" />
+
+        <Spinner
+            android:id="@+id/node_type_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/spinner_items"
+            android:minHeight="48dp" />
+
+        <FrameLayout
+            android:id="@+id/digital_frame"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="ON"
+                                android:textAlignment="center"
+                                android:layout_marginLeft="30dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="OFF"
+                                android:textAlignment="center"
+                                android:layout_marginLeft="10dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="ALARM"
+                                android:layout_marginLeft="10dp"
+                                />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center">
+                            <ImageView
+                                android:id="@+id/on_button"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:src="@drawable/photo_collage"
+                                />
+
+                            <ImageView
+                                android:id="@+id/off_button"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:src="@drawable/photo_collage"
+                                android:layout_marginLeft="10dp"
+                                />
+
+                            <ImageView
+                                android:id="@+id/alarm_button"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:src="@drawable/photo_collage"
+                                android:layout_marginLeft="10dp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+        </FrameLayout>
+        <FrameLayout
+            android:id="@+id/analog_frame"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="20dp">
+                <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="SYMBOL"
+                                android:textAlignment="center"
+                                android:layout_marginLeft="30dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="ALARM"
+                                android:layout_marginLeft="10dp"
+                                />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center">
+                            <ImageView
+                                android:id="@+id/symbol_button"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:src="@drawable/photo_collage"
+                                />
+
+                            <ImageView
+                                android:id="@+id/alarm_button_analog"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:src="@drawable/photo_collage"
+                                android:layout_marginLeft="10dp"
+                                />
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+        </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/cancel_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CANCEL"
+            android:backgroundTint="#e85050"/>
+        <Button
+            android:id="@+id/next_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NEXT"
+            android:layout_marginLeft="30dp"
+            android:backgroundTint="#e85050"/>
+    </LinearLayout>
+    </LinearLayout>
+
+
+</FrameLayout>

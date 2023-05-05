@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.GridView;
 import android.widget.ImageView;
@@ -23,6 +25,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
+import java.text.BreakIterator;
 
 
 public class PlayersNewFragment extends DialogFragment {
@@ -36,6 +41,8 @@ public class PlayersNewFragment extends DialogFragment {
         private CheckBox myCheckbox,myCheckbox1;
         //Button button;
         ImageView button4,button5, button6,button7, button8;
+        Button saveanalog;
+        EditText edittexth, edittextl;
 
 
     String[] names={"Analizor clor", "Bazin empty","Bazin ful","Bazin half", "Boil 1","Boiler","Button1 off", "Button1 off p",
@@ -74,6 +81,9 @@ public class PlayersNewFragment extends DialogFragment {
             button6=view.findViewById(R.id.button6);
             button7=view.findViewById(R.id.button7);
             button8=view.findViewById(R.id.button8);
+            saveanalog=view.findViewById(R.id.save_analog);
+            edittexth=view.findViewById(R.id.high_alarm_edit_text);
+            edittextl=view.findViewById(R.id.low_alarm_edit_text);
 
             spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
@@ -120,7 +130,52 @@ public class PlayersNewFragment extends DialogFragment {
                     // Do nothing
                 }
             });
+//----------------------------------------------------------------------------------------
+            //salvare date
+            saveanalog.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
+                    String texth = edittexth.getText().toString();
+                    String textl = edittextl.getText().toString();
+
+                    // Check if the input values are numbers
+                    if (!TextUtils.isDigitsOnly(texth) || !TextUtils.isDigitsOnly(textl)) {
+                        Toast.makeText(getActivity(), "Please enter only numbers", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+
+                    int h = Integer.parseInt(texth);
+                    int l = Integer.parseInt(textl);
+                    int value = 10; // the value to compare with
+
+                    // Compare the values of h, l, and value
+                    String comparisonResult;
+                    if (h > value && l < value) {
+                        comparisonResult = "h is greater than " + value + " and l is less than " + value;
+                    } else if (h < value && l > value) {
+                        comparisonResult = "h is less than " + value + " and l is greater than " + value;
+                    } else {
+                        comparisonResult = "h and l are both either greater than or less than " + value;
+                    }
+
+                    // Pass the comparison result to the other fragment
+                    Bundle bundle = new Bundle();
+                    bundle.putString("comparisonResult", comparisonResult);
+                    Alarms otherFragment = new Alarms();
+                    otherFragment.setArguments(bundle);
+
+                    // Show the other fragment
+                    FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                    transaction.replace(R.id.frame_layout, otherFragment);
+                    transaction.addToBackStack(null);
+                    transaction.commit();
+
+                    // Save the value of text variables to a database or a file
+                    Toast.makeText(getActivity(), "Data saved successfully", Toast.LENGTH_SHORT).show();
+                }
+            });
+//----------------------------------------------------------------------------
             button4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

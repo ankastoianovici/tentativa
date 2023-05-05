@@ -18,4 +18,9 @@
         android:icon="@drawable/baseline_developer_board_24"
         android:title="Deploy"
         tools:ignore="HardcodedText" />
+    <item
+        android:id="@+id/Alarms"
+        android:icon="@drawable/baseline_alarm_24"
+        android:title="Alarms"
+        tools:ignore="HardcodedText" />
 </menu>

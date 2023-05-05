@@ -32,20 +32,14 @@ public class Citire extends AppCompatActivity {
                     case R.id.ServerDetails:
                         openRuntimeDevelopment();
                         break;
-                   /* case R.id.Browse:
-                        openRuntimeDevelopment();
-                        break;
-                    case R.id.DataAccess:
-                        openRuntimeDevelopment();
-                        break;
-                    case R.id.AlarmsEvents:
-                        openRuntimeDevelopment();
-                        break;*/
                     case R.id.Runtime:
                         replaceFragment(new develop());
                         break;
                     case R.id.Deploy:
                         replaceFragment(new Deploy());
+                        break;
+                    case R.id.Alarms:
+                        replaceFragment(new Alarms());
                         break;
                 }
                 return false;

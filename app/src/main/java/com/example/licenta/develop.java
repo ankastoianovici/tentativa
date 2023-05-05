@@ -29,7 +29,9 @@ public class develop extends Fragment {
                 /*PlayersFragment playersFragment=new PlayersFragment();
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container,playersFragment).commit();*/
 
-                PlayersNewFragment newFragment = new PlayersNewFragment();
+               /* PlayersNewFragment newFragment = new PlayersNewFragment();
+                newFragment.show(getChildFragmentManager(), "dff");*/
+                ConfigureObject newFragment = new ConfigureObject();
                 newFragment.show(getChildFragmentManager(), "dff");
 
 
