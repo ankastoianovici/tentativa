@@ -78,7 +78,6 @@
                     android:layout_height="wrap_content"
                     android:minHeight="48dp"
                     tools:ignore="SpeakableTextPresentCheck" />
-
                 <Button
                     android:id="@+id/salvare"
                     android:layout_width="wrap_content"
