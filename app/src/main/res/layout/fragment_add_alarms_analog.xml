@@ -82,16 +82,18 @@
                     android:id="@+id/salvare"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ADD (PLUS)"
+                    android:text="+"
+                    android:textSize="20sp"
                     android:layout_gravity="right"
+                    android:backgroundTint="#e85050"
                     tools:ignore="HardcodedText,RtlHardcoded" />
             </LinearLayout>
 
         <ListView
-
             android:id="@+id/listview"
             android:layout_width="match_parent"
-            android:layout_height="181dp" />
+            android:layout_height="181dp"
+            android:visibility="gone"/>
 
 
         <LinearLayout
