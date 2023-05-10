@@ -203,7 +203,7 @@ public class ConfigureObject  extends DialogFragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //fa-l sa mearga mai bine ca nu face deloc ce trebuie
+                //TODO fa-l sa mearga mai bine ca nu face deloc ce trebuie
                 String mode = spinner.getSelectedItem().toString(); // get the selected mode from the spinner
                 if(mode.equals("Analog")) {
                     ConfigureNodeAnalog newFragment = new ConfigureNodeAnalog();
