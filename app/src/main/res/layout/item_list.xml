@@ -18,8 +18,10 @@
         android:id="@+id/delete_button"
         android:layout_width="61dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/baseline_delete_forever_24"
-        app:backgroundTint="#e85050"
+        android:text="X"
+        android:textSize="20sp"
+        android:textColor="#e85050"
+        app:backgroundTint="#f5f5fd"
         tools:ignore="HardcodedText,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
 </LinearLayout>

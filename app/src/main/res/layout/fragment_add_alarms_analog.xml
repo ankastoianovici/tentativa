@@ -77,7 +77,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:minHeight="48dp"
-                    tools:ignore="SpeakableTextPresentCheck" />
+                    tools:ignore="SpeakableTextPresentCheck"
+                    />
                 <Button
                     android:id="@+id/salvare"
                     android:layout_width="wrap_content"
@@ -93,7 +94,7 @@
             android:id="@+id/listview"
             android:layout_width="match_parent"
             android:layout_height="181dp"
-            android:visibility="gone"/>
+            />
 
 
         <LinearLayout
@@ -106,11 +107,20 @@
                 android:id="@+id/cancel_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#e85050"
+                android:backgroundTint="#3C3B3B"
                 android:text="CANCEL"
                 android:textColor="#FFFFFF"
                 tools:ignore="ButtonStyle,HardcodedText,TextContrastCheck" />
 
+            <Button
+                android:id="@+id/back_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:backgroundTint="#e85050"
+                android:text="BACK"
+                tools:ignore="ButtonStyle,HardcodedText,RtlHardcoded,TextContrastCheck"
+                />
             <Button
                 android:id="@+id/finish_button"
                 android:layout_width="wrap_content"

@@ -25,6 +25,10 @@
         <item>Value</item>
         <item>BITWISE</item>
     </string-array>
+    <string-array name="spinner_itemsmode">
+        <item>mai mare</item>
+        <item>mai mic</item>
+    </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

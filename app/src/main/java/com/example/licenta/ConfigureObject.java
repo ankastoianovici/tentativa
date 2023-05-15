@@ -216,4 +216,9 @@ public class ConfigureObject  extends DialogFragment {
         });
         return view;
     }
+
+
+    public void dismissDialog() {
+        dismiss();
+    }
 }

@@ -177,7 +177,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="CANCEL"
-            android:backgroundTint="#e85050"/>
+            android:backgroundTint="#3C3B3B"/>
         <Button
             android:id="@+id/next_button"
             android:layout_width="wrap_content"
