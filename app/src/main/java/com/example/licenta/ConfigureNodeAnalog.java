@@ -2,6 +2,7 @@ package com.example.licenta;
 
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -30,6 +31,7 @@ public class ConfigureNodeAnalog extends DialogFragment {
             public void onClick(View v) {
                 AddAlarmsAnalog newFragment = new AddAlarmsAnalog();
                 newFragment.show(getChildFragmentManager(),"start");
+
             }
         });
         cancel.setOnClickListener(new View.OnClickListener() {
@@ -51,5 +53,10 @@ public class ConfigureNodeAnalog extends DialogFragment {
         });
 
         return view;
+    }
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        getDialog().setCanceledOnTouchOutside(false);
     }
 }

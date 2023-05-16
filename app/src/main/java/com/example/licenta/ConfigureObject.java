@@ -3,6 +3,7 @@ package com.example.licenta;
 import android.app.AlertDialog;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
@@ -203,7 +204,6 @@ public class ConfigureObject  extends DialogFragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO fa-l sa mearga mai bine ca nu face deloc ce trebuie
                 String mode = spinner.getSelectedItem().toString(); // get the selected mode from the spinner
                 if(mode.equals("Analog")) {
                     ConfigureNodeAnalog newFragment = new ConfigureNodeAnalog();
@@ -216,9 +216,14 @@ public class ConfigureObject  extends DialogFragment {
         });
         return view;
     }
-
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        getDialog().setCanceledOnTouchOutside(false);
+    }
 
     public void dismissDialog() {
         dismiss();
     }
+
 }

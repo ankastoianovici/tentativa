@@ -1,5 +1,6 @@
 package com.example.licenta;
 
+import android.app.AlertDialog;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -9,6 +10,7 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
@@ -38,7 +40,7 @@ public class AddAlarmsAnalog extends DialogFragment {
     private List_Adapter adapter;
     private EditText editText1, editText2, editText3;
     private Spinner spinner;
-    private Button button;
+    private Button button, back;
     private TextView textView;
 
     @Override
@@ -62,6 +64,7 @@ public class AddAlarmsAnalog extends DialogFragment {
         spinner.setAdapter(adapter1);
 
 
+        back=view.findViewById(R.id.back_button);
         Button buttonAdd = view.findViewById(R.id.salvare);
         Button cancel = view.findViewById(R.id.cancel_button);
         buttonAdd.setOnClickListener(new View.OnClickListener() {
@@ -78,7 +81,17 @@ public class AddAlarmsAnalog extends DialogFragment {
                 String editTextValue2 = editText3.getText().toString();
                 // Add a new item to the ArrayList and notify the adapter that the data set has changed
                 String itemString = editTextValue + " " + editTextValue1;
-                itemList.add(itemString);
+                if (!itemList.contains(itemString)) {
+                    //nume alarma duplicat
+                    itemList.add(itemString);
+                } else {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                    builder.setTitle("Duplicate Item");
+                    builder.setMessage("The item already exists in the list.");
+                    builder.setPositiveButton("OK", null);
+                    AlertDialog alert = builder.create();
+                    alert.show();
+                }
                 Collections.reverse(itemList); // Reverse the ArrayList
                 adapter.notifyDataSetChanged(); // Update the ListView
             }
@@ -90,6 +103,12 @@ public class AddAlarmsAnalog extends DialogFragment {
 
         });
 
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dismiss();
+            }
+        });
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -141,10 +160,17 @@ public class AddAlarmsAnalog extends DialogFragment {
                         sendNotification(getContext(), "Alarm Notification", message);
                     }
                 }
+
+
             }
         });
 
         return view;
+    }
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        getDialog().setCanceledOnTouchOutside(false);
     }
 
     private void sendNotification(Context context, String notification_title, String message) {
