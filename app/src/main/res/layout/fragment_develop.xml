@@ -17,6 +17,13 @@ tools:context=".develop">
     android:layout_marginBottom="60dp"
     android:background="@color/white">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/a"
+        android:background="@drawable/border_blink" />
+
 
     <Button
         android:id="@+id/add"

@@ -60,7 +60,7 @@ public class AddAlarmsAnalog extends DialogFragment {
         editText3 = view.findViewById(R.id.name_message_text);
         spinner = view.findViewById(R.id.mode_spinner);
         button = view.findViewById(R.id.finish_button);
-        ArrayAdapter<String> adapter1 = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_dropdown_item, new String[]{"Bigger", "Lower", "Between"});
+        ArrayAdapter<String> adapter1 = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_dropdown_item, new String[]{"Bigger", "Lower"});
         spinner.setAdapter(adapter1);
 
 
@@ -116,48 +116,43 @@ public class AddAlarmsAnalog extends DialogFragment {
                 //varianta asta nu mergea pentru ca sus aveam string si aici salvam in int, se bateau cap in cap
                 //int value1 = Integer.parseInt(editText1.getText().toString());
                 //int value2 = Integer.parseInt(editText2.getText().toString());
+                // Get selected item from spinner
+                String selectedItem = spinner.getSelectedItem().toString();
+
                 for (String item : itemList) {
-                    // Split the item string into value1, value2 and value 3
+                    // Split the item string into value1 and value2
                     String[] values = item.split(" ");
                     int value1 = Integer.parseInt(values[0]);
                     int value2 = Integer.parseInt(values[1]);
-                    int value3 = Integer.parseInt(values[2]);
-
-                    // Get selected item from spinner
-                    String selectedItem = spinner.getSelectedItem().toString();
 
                     // Check if value1 is greater than value2
                     boolean isFirstBigger = value1 > value2;
                     boolean isFirstLower = value1 < value2;
-                    //Check if value1 is greater than value2 and also less than value3
-                    boolean isBetween = value1 > value2 && value1 < value3;
 
-                    // Calculate result based on selected item
+                    // Calculate result and message based on selected item
                     boolean result;
                     String message = null;
+
                     if (selectedItem.equals("Bigger")) {
-                        message = "Bigger Alarma ON";
                         result = isFirstBigger;
-
-                    }
-                    else if (selectedItem.equals("Lower")) {
-                        message = "Lower Alarma ON";
+                        message = "Bigger Alarm ON";
+                    } else if (selectedItem.equals("Lower")) {
                         result = isFirstLower;
-                    }
-                    //asta nu merge
-                    else if (selectedItem.equals("Between")) {
-                        message = "Between Alarma ON";
-                        result = isBetween;
+                        message = "Lower Alarm ON";
                     } else {
-                        message = "Alarma OFF";
                         result = false; // Set the result to false if the alarm is not on
+                        message = "Alarm OFF";
+                        Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
                     }
 
-                    // Display result using toast
-                    Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
-                    if (result) {
-                        // Build and send the notification
+                    // Send notification and display toast message only if the alarm is on
+                    if (result!=false) {
                         sendNotification(getContext(), "Alarm Notification", message);
+                        Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
+                        //Alarms otherFragment = (Alarms) getActivity().getSupportFragmentManager().findFragmentByTag("OtherFragmentTag");
+                        //if (otherFragment != null) {
+                        //    otherFragment.addDataToList(item);
+                        //}
                     }
                 }
 
