@@ -10,6 +10,8 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -26,22 +28,16 @@ public class Deploy extends Fragment {
         View rootView= inflater.inflate(R.layout.fragment_deploy, container, false);
 
         button = rootView.findViewById(R.id.alarmlist);
+        Animation anim = new AlphaAnimation(0.0f, 1.0f);
+        anim.setDuration(500); // Set the duration of each animation cycle
+        anim.setStartOffset(20); // Delay before animation starts
+        anim.setRepeatMode(Animation.REVERSE); // Animation reverses after completing
+        anim.setRepeatCount(Animation.INFINITE); // Repeat animation indefinitely
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-            //nu merge sa se deschida aici
-
-
-
-
-
-              /*  Toast.makeText(getActivity(), "First Fragment", Toast.LENGTH_LONG).show();
-                FragmentManager fragmentManager = getParentFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-               // fragmentTransaction.replace(R.id., new Alarms());
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();*/
+                button.startAnimation(anim);
             }
 
         });

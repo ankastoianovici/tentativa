@@ -26,11 +26,7 @@ public class ConfigureObject  extends DialogFragment {
     ImageView on_button,off_button, alarm_button,symbol_button, alarm_button1;
     Button cancel,next;
 
-    String[] names={"Analizor clor", "Bazin empty","Bazin ful","Bazin half", "Boil 1","Boiler","Button1 off", "Button1 off p",
-            "Analizor clor", "Bazin empty","Bazin ful","Bazin half", "Boil 1","Boiler","Button1 off", "Button1 off p",
-            "Analizor clor", "Bazin empty","Bazin ful","Bazin half", "Boil 1","Boiler","Button1 off", "Button1 off p",
-            "Analizor clor", "Bazin empty","Bazin ful","Bazin half", "Boil 1","Boiler","Button1 off", "Button1 off p",
-            "Analizor clor", "Bazin empty","Bazin ful","Bazin half", "Boil 1","Boiler","Button1 off", "Button1 off p"};
+
     int images[]={R.drawable.analizorclor,R.drawable.bazinempty,R.drawable.bazinful,
             R.drawable.bazinhalf,R.drawable.boil1,R.drawable.boiler,R.drawable.button1_off,
             R.drawable.button1_off_p,R.drawable.analizorclor,R.drawable.bazinempty,R.drawable.bazinful,
@@ -89,7 +85,7 @@ public class ConfigureObject  extends DialogFragment {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                 View view = LayoutInflater.from(getContext()).inflate(R.layout.player, null);
                 GridView gridView = view.findViewById(R.id.gridView1);
-                CustomAdapter adapter=new CustomAdapter(getActivity(), names, images);
+                CustomAdapter adapter=new CustomAdapter(getActivity(), images);
                 gridView.setAdapter(adapter);
                 builder.setView(view);
                 AlertDialog dialog = builder.create();
@@ -111,7 +107,7 @@ public class ConfigureObject  extends DialogFragment {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                 View view = LayoutInflater.from(getContext()).inflate(R.layout.player, null);
                 GridView gridView = view.findViewById(R.id.gridView1);
-                CustomAdapter adapter=new CustomAdapter(getActivity(), names, images);
+                CustomAdapter adapter=new CustomAdapter(getActivity(), images);
                 gridView.setAdapter(adapter);
                 builder.setView(view);
                 AlertDialog dialog = builder.create();
@@ -133,7 +129,7 @@ public class ConfigureObject  extends DialogFragment {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                 View view = LayoutInflater.from(getContext()).inflate(R.layout.player, null);
                 GridView gridView = view.findViewById(R.id.gridView1);
-                CustomAdapter adapter=new CustomAdapter(getActivity(), names, images);
+                CustomAdapter adapter=new CustomAdapter(getActivity(), images);
                 gridView.setAdapter(adapter);
                 builder.setView(view);
                 AlertDialog dialog = builder.create();
@@ -155,7 +151,7 @@ public class ConfigureObject  extends DialogFragment {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                 View view = LayoutInflater.from(getContext()).inflate(R.layout.player, null);
                 GridView gridView = view.findViewById(R.id.gridView1);
-                CustomAdapter adapter=new CustomAdapter(getActivity(), names, images);
+                CustomAdapter adapter=new CustomAdapter(getActivity(), images);
                 gridView.setAdapter(adapter);
                 builder.setView(view);
                 AlertDialog dialog = builder.create();
@@ -177,7 +173,7 @@ public class ConfigureObject  extends DialogFragment {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                 View view = LayoutInflater.from(getContext()).inflate(R.layout.player, null);
                 GridView gridView = view.findViewById(R.id.gridView1);
-                CustomAdapter adapter=new CustomAdapter(getActivity(), names, images);
+                CustomAdapter adapter=new CustomAdapter(getActivity(), images);
                 gridView.setAdapter(adapter);
                 builder.setView(view);
                 AlertDialog dialog = builder.create();

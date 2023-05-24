@@ -21,9 +21,11 @@ import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -40,6 +42,7 @@ public class AddAlarmsAnalog extends DialogFragment {
     private List_Adapter adapter;
     private EditText editText1, editText2, editText3;
     private Spinner spinner;
+    private FrameLayout frameValue,frameBitwise;
     private Button button, back;
     private TextView textView;
 
@@ -54,6 +57,10 @@ public class AddAlarmsAnalog extends DialogFragment {
         itemList = new ArrayList<String>();
         adapter = new List_Adapter(getActivity(), itemList);
         listView.setAdapter(adapter);
+
+        spinner = view.findViewById(R.id.set_value);
+        frameValue = view.findViewById(R.id.value_frame);
+        frameBitwise = view.findViewById(R.id.bitwise_frame);
 
         editText1 = view.findViewById(R.id.node_edit_text);
         editText2 = view.findViewById(R.id.name_alarma_text);
@@ -160,6 +167,28 @@ public class AddAlarmsAnalog extends DialogFragment {
             }
         });
 
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectedItem = parent.getItemAtPosition(position).toString();
+
+                if (selectedItem.equals("Value")) {
+                    frameValue.setVisibility(View.VISIBLE);
+                    frameBitwise.setVisibility(View.GONE);
+                    // Uncheck the checkbox when "Digital" is selected
+
+                } else if (selectedItem.equals("BITWISE")) {
+                    frameValue.setVisibility(View.GONE);
+                    frameBitwise.setVisibility(View.VISIBLE);
+
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // Do nothing
+            }
+        });
         return view;
     }
     @Override

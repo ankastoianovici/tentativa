@@ -12,9 +12,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:numColumns="4"
-        android:horizontalSpacing="8dp"
-        android:verticalSpacing="10dp"
-        android:padding="8dp"
+        android:horizontalSpacing="2dp"
+        android:verticalSpacing="5dp"
+        android:padding="5dp"
 
     />
 </LinearLayout>

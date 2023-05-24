@@ -182,7 +182,7 @@ public class PlayersNewFragment extends DialogFragment {
                     AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                     View view = LayoutInflater.from(getContext()).inflate(R.layout.player, null);
                     GridView gridView = view.findViewById(R.id.gridView1);
-                    CustomAdapter adapter=new CustomAdapter(getActivity(), names, images);
+                    CustomAdapter adapter=new CustomAdapter(getActivity(), images);
                     gridView.setAdapter(adapter);
                     builder.setView(view);
                     AlertDialog dialog = builder.create();
@@ -204,7 +204,7 @@ public class PlayersNewFragment extends DialogFragment {
                     AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                     View view = LayoutInflater.from(getContext()).inflate(R.layout.player, null);
                     GridView gridView = view.findViewById(R.id.gridView1);
-                    CustomAdapter adapter=new CustomAdapter(getActivity(), names, images);
+                    CustomAdapter adapter=new CustomAdapter(getActivity(), images);
                     gridView.setAdapter(adapter);
                     builder.setView(view);
                     AlertDialog dialog = builder.create();
@@ -227,7 +227,7 @@ public class PlayersNewFragment extends DialogFragment {
                     AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                     View view = LayoutInflater.from(getContext()).inflate(R.layout.player, null);
                     GridView gridView = view.findViewById(R.id.gridView1);
-                    CustomAdapter adapter=new CustomAdapter(getActivity(), names, images);
+                    CustomAdapter adapter=new CustomAdapter(getActivity(), images);
                     gridView.setAdapter(adapter);
                     builder.setView(view);
                     AlertDialog dialog = builder.create();
@@ -249,7 +249,7 @@ public class PlayersNewFragment extends DialogFragment {
                     AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                     View view = LayoutInflater.from(getContext()).inflate(R.layout.player, null);
                     GridView gridView = view.findViewById(R.id.gridView1);
-                    CustomAdapter adapter=new CustomAdapter(getActivity(), names, images);
+                    CustomAdapter adapter=new CustomAdapter(getActivity(), images);
                     gridView.setAdapter(adapter);
                     builder.setView(view);
                     AlertDialog dialog = builder.create();
@@ -271,7 +271,7 @@ public class PlayersNewFragment extends DialogFragment {
                     AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                     View view = LayoutInflater.from(getContext()).inflate(R.layout.player, null);
                     GridView gridView = view.findViewById(R.id.gridView1);
-                    CustomAdapter adapter=new CustomAdapter(getActivity(), names, images);
+                    CustomAdapter adapter=new CustomAdapter(getActivity(), images);
                     gridView.setAdapter(adapter);
                     builder.setView(view);
                     AlertDialog dialog = builder.create();

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,100 +10,225 @@
         android:layout_height="wrap_content"
         android:background="#f5f5fd"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:padding="20dp"
+        tools:ignore="UselessParent">
 
         <TextView
             android:id="@+id/noed_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Node" />
+            android:text="Node"
+            tools:ignore="HardcodedText" />
 
         <EditText
             android:id="@+id/node_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
             android:background="@drawable/rectangle"
-            android:ems="10"/>
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck"
+            android:autofillHints="" />
+
         <Spinner
             android:id="@+id/spinner_state_comand"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:entries="@array/spinner_items3"
             android:minHeight="48dp" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Set value for ON" />
+            android:text="Set value for ON"
+            tools:ignore="HardcodedText" />
+
         <Spinner
             android:id="@+id/set_value"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:entries="@array/spinner_items4"
             android:minHeight="48dp" />
+
         <FrameLayout
             android:id="@+id/value_frame"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:visibility="gone">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:padding="20dp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    tools:ignore="ExtraText">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Value" />
+                        android:text="Value"
+                        tools:ignore="HardcodedText" />
 
                     <EditText
                         android:id="@+id/value_edit_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:inputType="textPersonName"
+                        android:layout_marginLeft="10dp"
                         android:background="@drawable/rectangle"
                         android:ems="10"
-                        android:layout_marginLeft="10dp"/>
-                        />
+                        android:inputType="textPersonName"
+                        android:autofillHints=""
+                        tools:ignore="LabelFor,RtlHardcoded" />
+                    />
                 </LinearLayout>
             </LinearLayout>
         </FrameLayout>
+
         <FrameLayout
             android:id="@+id/bitwise_frame"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:visibility="gone">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:padding="20dp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Bit" />
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="7"
+                        tools:ignore="HardcodedText" />
 
-                    <EditText
-                        android:id="@+id/bit_edit_text"
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:inputType="textPersonName"
-                        android:background="@drawable/rectangle"
-                        android:ems="10"
-                        android:layout_marginLeft="10dp"/>
-                    />
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="6"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="5"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="4"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="3"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="2"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="1"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="0"
+                        tools:ignore="HardcodedText" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/bit7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <CheckBox
+                        android:id="@+id/bit6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <CheckBox
+                        android:id="@+id/bit5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <CheckBox
+                        android:id="@+id/bit4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <CheckBox
+                        android:id="@+id/bit3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <CheckBox
+                        android:id="@+id/bit2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <CheckBox
+                        android:id="@+id/bit1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <CheckBox
+                        android:id="@+id/bit0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
                 </LinearLayout>
             </LinearLayout>
         </FrameLayout>
@@ -114,12 +238,15 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="horizontal">
+
             <Button
                 android:id="@+id/cancel_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:backgroundTint="#3C3B3B"
                 android:text="CANCEL"
-                android:backgroundTint="#3C3B3B"/>
+                tools:ignore="ButtonStyle,HardcodedText" />
+
             <Button
                 android:id="@+id/back_button"
                 android:layout_width="wrap_content"
@@ -127,15 +254,17 @@
                 android:layout_marginLeft="30dp"
                 android:backgroundTint="#e85050"
                 android:text="BACK"
-                tools:ignore="ButtonStyle,HardcodedText,RtlHardcoded,TextContrastCheck"
-                />
+                tools:ignore="ButtonStyle,HardcodedText,RtlHardcoded,TextContrastCheck" />
+
             <Button
                 android:id="@+id/next_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:backgroundTint="#e85050"
                 android:text="NEXT"
-                android:layout_marginLeft="30dp"
-                android:backgroundTint="#e85050"/>
+                android:textColor="#FFFFFF"
+                tools:ignore="ButtonStyle,HardcodedText,TextContrastCheck" />
 
         </LinearLayout>
     </LinearLayout>

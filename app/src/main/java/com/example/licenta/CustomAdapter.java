@@ -13,24 +13,23 @@ import android.widget.TextView;
 public class CustomAdapter extends BaseAdapter{
 
     private Context c;
-    private String[] names;
     int[] images;
 
 
-    public CustomAdapter(Context ctx, String[] names, int[] images) {
+    public CustomAdapter(Context ctx, int[] images) {
         this.c=ctx;
-        this.names=names;
+
         this.images=images;
     }
 
     @Override
     public int getCount() {
-        return names.length;
+        return images.length;
     }
 
     @Override
     public Object getItem(int position) {
-        return names[position];
+        return images[position];
     }
 
     @Override
@@ -47,10 +46,9 @@ public class CustomAdapter extends BaseAdapter{
         }
 
 
-        TextView nameTv=convertView.findViewById(R.id.nameTv);
+
         ImageView img=convertView.findViewById(R.id.imageView1);
 
-        nameTv.setText(names[position]);
         img.setImageResource(images[position]);
         return convertView;
 
