@@ -1,23 +1,28 @@
 package com.example.licenta;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
-import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.FrameLayout;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class ConfigureObject  extends DialogFragment {
@@ -25,6 +30,7 @@ public class ConfigureObject  extends DialogFragment {
     private FrameLayout frameDigital,frameAnalog;
     ImageView on_button,off_button, alarm_button,symbol_button, alarm_button1;
     Button cancel,next;
+
 
 
     int images[]={R.drawable.analizorclor,R.drawable.bazinempty,R.drawable.bazinful,
@@ -39,6 +45,8 @@ public class ConfigureObject  extends DialogFragment {
             R.drawable.bazinhalf,R.drawable.boil1,R.drawable.boiler,R.drawable.button1_off,
             R.drawable.button1_off_p};
 
+
+    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -210,6 +218,8 @@ public class ConfigureObject  extends DialogFragment {
                 }
             }
         });
+
+
         return view;
     }
     @Override

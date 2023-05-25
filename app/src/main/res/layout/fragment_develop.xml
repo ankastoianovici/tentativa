@@ -25,6 +25,11 @@
             android:src="@drawable/a" />
 
 
+        <TextView
+            android:id="@+id/selectedImageTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="76dp"
@@ -42,7 +47,7 @@
                 android:text="+" />
 
             <Button
-                android:id="@+id/legend"
+                android:id="@+id/openButton"
                 android:layout_width="48dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|right"
