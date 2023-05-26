@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -18,7 +19,9 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,10 +32,14 @@ import java.util.List;
 public class develop extends Fragment {
 
     Button button,openButton;
-    private TextView selectedImageTextView;
+    private ImageView selectedImageTextView;
 
 
-    int images[]={R.drawable.curbastanga,R.drawable.curbadreapta,R.drawable.liniepunctata};
+    //Problema e ca nu-mi place deloc cum arata meniul cu linii
+    int images[]={R.drawable.dottedline,R.drawable.dottedline2,R.drawable.dottedline3,
+            R.drawable.dottedline4,R.drawable.dottedline5,R.drawable.dottedline6,
+            R.drawable.line,R.drawable.line2,R.drawable.line3,
+            R.drawable.line4,R.drawable.line5,R.drawable.line6,};
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -63,8 +70,8 @@ public class develop extends Fragment {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-                View view = LayoutInflater.from(getContext()).inflate(R.layout.player, null);
-                GridView gridView = view.findViewById(R.id.gridView1);
+                View view = LayoutInflater.from(getContext()).inflate(R.layout.legenda, null);
+                GridView gridView = view.findViewById(R.id.gridView2);
                 CustomAdapter adapter=new CustomAdapter(getActivity(), images);
                 gridView.setAdapter(adapter);
                 builder.setView(view);
@@ -74,11 +81,39 @@ public class develop extends Fragment {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         int selectedImage = images[position];
-
-                        selectedImageTextView.setText(String.valueOf(selectedImage));
+                        selectedImageTextView.setImageResource(Integer.parseInt(String.valueOf(selectedImage)));
                         dialog.dismiss();
+
                     }
                 });
+            }
+        });
+        selectedImageTextView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                // Create PopupMenu
+                PopupMenu popupMenu = new PopupMenu(getContext(), v);
+                popupMenu.getMenuInflater().inflate(R.menu.image_options_menu, popupMenu.getMenu());
+
+                // Set a click listener for menu items
+                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+                        // Handle menu item click events
+                        switch (item.getItemId()) {
+                            case R.id.menu_delete:
+                                // Delete the image
+                                ViewGroup parent = (ViewGroup) v.getParent();
+                                parent.removeView(v);
+                                return true;
+                            default:
+                                return false;
+                        }
+                    }
+                });
+
+                popupMenu.show();
+                return true; // Indicates that the long click event is consumed
             }
         });
 

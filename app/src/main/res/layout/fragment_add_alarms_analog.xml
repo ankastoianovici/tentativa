@@ -27,8 +27,7 @@
             android:background="@drawable/rectangle"
             android:ems="10"
             android:inputType="textPersonName"
-            tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck,VisualLintTextFieldSize"
-            android:autofillHints="" />
+            />
 
 
             <TextView
@@ -44,8 +43,7 @@
                 android:background="@drawable/rectangle"
                 android:ems="10"
                 android:inputType="textPersonName"
-                tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck,VisualLintTextFieldSize"
-                android:autofillHints="" />
+               />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
