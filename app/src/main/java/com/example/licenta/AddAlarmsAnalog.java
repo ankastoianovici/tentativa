@@ -119,10 +119,7 @@ public class AddAlarmsAnalog extends DialogFragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Get values from EditTexts
-                //varianta asta nu mergea pentru ca sus aveam string si aici salvam in int, se bateau cap in cap
-                //int value1 = Integer.parseInt(editText1.getText().toString());
-                //int value2 = Integer.parseInt(editText2.getText().toString());
+
                 // Get selected item from spinner
                 String selectedItem = spinner.getSelectedItem().toString();
 

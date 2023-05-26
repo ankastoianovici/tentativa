@@ -27,7 +27,8 @@
             android:background="@drawable/rectangle"
             android:ems="10"
             android:inputType="textPersonName"
-            />
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck" />
 
 
             <TextView
@@ -36,14 +37,14 @@
                 android:text="Name"
                 tools:ignore="HardcodedText" />
 
-            <EditText
-                android:id="@+id/name_alarma_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/rectangle"
-                android:ems="10"
-                android:inputType="textPersonName"
-               />
+        <EditText
+            android:id="@+id/name_alarma_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectangle"
+            android:ems="10"
+            android:inputType="textPersonName"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

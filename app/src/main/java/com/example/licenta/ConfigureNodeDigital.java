@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.FrameLayout;
 import android.widget.Spinner;
 
@@ -22,7 +23,7 @@ public class ConfigureNodeDigital extends DialogFragment {
     private Spinner spinner;
     private FrameLayout frameValue,frameBitwise;
     Button next, cancel;
-
+    CheckBox checkbox0, checkbox1,checkbox2;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -34,7 +35,32 @@ public class ConfigureNodeDigital extends DialogFragment {
         frameBitwise = view.findViewById(R.id.bitwise_frame);
         next=view.findViewById(R.id.next_button);
         cancel=view.findViewById(R.id.cancel_button);
+//----------------------------------------------------------------------------------------------------------------------------
+        checkbox0 = view.findViewById(R.id.bit0);
+        checkbox1 = view.findViewById(R.id.bit1);
+        checkbox2 = view.findViewById(R.id.bit2);
 
+        checkbox0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                handleCheckboxClick(checkbox0);
+            }
+        });
+
+        checkbox1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                handleCheckboxClick(checkbox1);
+            }
+        });
+
+        checkbox2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                handleCheckboxClick(checkbox2);
+            }
+        });
+//------------------------------------------------------------------------------
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -74,5 +100,27 @@ public class ConfigureNodeDigital extends DialogFragment {
             }
         });
         return  view;
+    }
+
+    private void handleCheckboxClick(CheckBox clickedCheckbox) {
+        if (clickedCheckbox.isChecked()) {
+            // Uncheck all checkboxes except the clicked one
+            checkbox1.setChecked(clickedCheckbox == checkbox1);
+            checkbox2.setChecked(clickedCheckbox == checkbox2);
+            checkbox0.setChecked(clickedCheckbox == checkbox0);
+
+            // Disable all checkboxes except the clicked one
+            checkbox1.setEnabled(clickedCheckbox == checkbox1);
+            checkbox2.setEnabled(clickedCheckbox == checkbox2);
+            checkbox0.setEnabled(clickedCheckbox == checkbox0);
+        } else {
+            // Allow unchecking the clicked checkbox
+            clickedCheckbox.setChecked(false);
+
+            // Enable all checkboxes
+            checkbox1.setEnabled(true);
+            checkbox2.setEnabled(true);
+            checkbox0.setEnabled(true);
+        }
     }
 }
