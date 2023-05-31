@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -31,11 +30,11 @@
             tools:ignore="SpeakableTextPresentCheck" />
 
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Name"
-                tools:ignore="HardcodedText" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            tools:ignore="HardcodedText" />
 
         <EditText
             android:id="@+id/name_alarma_text"
@@ -45,34 +44,36 @@
             android:ems="10"
             android:inputType="textPersonName"
             tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Message"
-                tools:ignore="HardcodedText" />
 
-            <EditText
-                android:id="@+id/name_message_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/rectangle"
-                android:ems="10"
-                android:inputType="textPersonName"
-                tools:ignore="Autofill,LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck,VisualLintTextFieldSize" />
-            <TextView
-                android:id="@+id/mode"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Mode"
-                tools:ignore="HardcodedText" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Message"
+            tools:ignore="HardcodedText" />
 
-            <Spinner
-                android:id="@+id/mode_spinner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:minHeight="48dp"
-                tools:ignore="SpeakableTextPresentCheck"
-                />
+        <EditText
+            android:id="@+id/name_message_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectangle"
+            android:ems="10"
+            android:inputType="textPersonName"
+            tools:ignore="Autofill,LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck,VisualLintTextFieldSize" />
+
+        <TextView
+            android:id="@+id/mode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mode"
+            tools:ignore="HardcodedText" />
+
+        <Spinner
+            android:id="@+id/mode_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -269,21 +270,20 @@
         </FrameLayout>
 
         <Button
-                android:id="@+id/salvare"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="+"
-                android:textSize="20sp"
-                android:layout_gravity="right"
-                android:backgroundTint="#e85050"
-                tools:ignore="HardcodedText,RtlHardcoded" />
+            android:id="@+id/salvare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:backgroundTint="#e85050"
+            android:text="+"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText,RtlHardcoded" />
 
 
         <ListView
             android:id="@+id/listview"
             android:layout_width="match_parent"
-            android:layout_height="181dp"
-            />
+            android:layout_height="181dp" />
 
 
         <LinearLayout
@@ -308,8 +308,8 @@
                 android:layout_marginLeft="30dp"
                 android:backgroundTint="#e85050"
                 android:text="BACK"
-                tools:ignore="ButtonStyle,HardcodedText,RtlHardcoded,TextContrastCheck"
-                />
+                tools:ignore="ButtonStyle,HardcodedText,RtlHardcoded,TextContrastCheck" />
+
             <Button
                 android:id="@+id/finish_button"
                 android:layout_width="wrap_content"
@@ -319,6 +319,13 @@
                 android:text="FINISH"
                 tools:ignore="ButtonStyle,HardcodedText,RtlHardcoded,TextContrastCheck" />
         </LinearLayout>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+
+            />
     </LinearLayout>
 
 

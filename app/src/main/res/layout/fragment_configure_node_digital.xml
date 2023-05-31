@@ -24,12 +24,12 @@
             android:id="@+id/node_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:autofillHints=""
             android:background="@drawable/rectangle"
             android:ems="10"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            tools:ignore="LabelFor,SpeakableTextPresentCheck"
-            android:autofillHints="" />
+            tools:ignore="LabelFor,SpeakableTextPresentCheck" />
 
         <Spinner
             android:id="@+id/spinner_state_comand"
