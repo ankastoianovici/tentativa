@@ -131,7 +131,7 @@ public class develop extends Fragment implements View.OnTouchListener {
     }
 //-----------------------------------------------------------------------------------------------------
     //Miscare image si text
-    @Override
+    /*@Override
     public boolean onTouch(View v, MotionEvent event) {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
@@ -165,6 +165,42 @@ public class develop extends Fragment implements View.OnTouchListener {
             default:
                 return false;
         }
+    }*/
+public boolean onTouch(View v, MotionEvent event) {
+    switch (event.getAction()) {
+        case MotionEvent.ACTION_DOWN:
+            // Record the starting coordinates of the touch
+            startX = event.getX();
+            startY = event.getY();
+            return true;
+
+        case MotionEvent.ACTION_MOVE:
+            // Calculate the distance moved by the touch
+            float dx = event.getX() - startX;
+            float dy = event.getY() - startY;
+
+            // Move the views using ViewPropertyAnimator
+            selectedImageTextView.animate()
+                    .x(selectedImageTextView.getX() + dx)
+                    .y(selectedImageTextView.getY() + dy)
+                    .setDuration(0)
+                    .start();
+
+            textView.animate()
+                    .x(textView.getX() + dx)
+                    .y(textView.getY() + dy)
+                    .setDuration(0)
+                    .start();
+
+            // Update the starting coordinates for the next move
+            startX = event.getX();
+            startY = event.getY();
+            return true;
+
+        default:
+            return false;
     }
+}
+
 }
 
